@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1243.0.min.js"></script>
+    <title>Cloud Page</title>
+  </head>
+  <body class="index__body">
+    <header class="header">
+      <section class="header__section">
+        <h2>Share pictures!</h2>
+      </section>
+      <section class="header__list">
+        <ul>
+          <li>How to</li>
+          <li>Pictures</li>
+          <li>FAQ</li>
+        </ul>
+      </section>
+    </header>
+
+    <main>
+      <h2>
+        Thank you for joining us on our special day! Please feel free to upload
+        pictures from the day
+      </h2>
+      <h3>How to: </h3>
+      <p>Choose a file (only .png) and then choose a folder to place your image in.</p>
+      
+      <section>
+          <form id="upload-form">
+              <input type="file" id="file-input" accept=".png" />
+              <select
+              name="map-selector"
+              id="map-selector"
+              onchange="chooseAddFolder()"
+              >
+              <option value="Decoration" selected>Decoration</option>
+              <option value="Ceremony">Ceremony</option>
+              <option value="Party">Party</option>
+            </select>
+            <button type="submit">Ladda upp</button>
+        </form>
+    </section>
+
+    <h3>Choose what images to show</h3>
+    
+    <section>
+      <select name="categories" id="categories" onchange="fetchingTest()">
+        <option value="All" selected>All images</option>
+        <option value="Decoration">Decoration</option>
+        <option value="Ceremony">Ceremony</option>
+        <option value="Party">Party</option>
+      </select>
+    </section>
+      
+      <section id="image-container"></section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
